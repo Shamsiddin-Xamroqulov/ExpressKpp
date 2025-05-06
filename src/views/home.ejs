@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4f46e5", secondary: "#6366f1" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      .custom-checkbox {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 2px solid #d1d5db;
+        border-radius: 4px;
+        outline: none;
+        cursor: pointer;
+        position: relative;
+      }
+      .custom-checkbox:checked {
+        background-color: #4f46e5;
+        border-color: #4f46e5;
+      }
+      .custom-checkbox:checked::after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+      input:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+      }
+      .table-row-hover:hover {
+        background-color: rgba(79, 70, 229, 0.05);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 min-h-screen flex items-center justify-center">
+    <main class="w-full max-w-lg px-6">
+      <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+        <h1 class="font-['Pacifico'] text-4xl mb-8">Home</h1>
+        <p class="text-gray-600 mb-8 text-lg">
+          Welcome to our Access Management System
+        </p>
+        <div class="flex flex-col gap-4">
+          <a
+            href="/login"
+            class="flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white rounded hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap"
+          >
+            <i class="ri-admin-line"></i>
+            <span>Admin Panel</span>
+          </a>
+          <a
+            href="/main"
+            class="js-main flex items-center justify-center gap-2 px-6 py-3 bg-green-600 text-white rounded hover:bg-green-700 transition-colors !rounded-button whitespace-nowrap"
+          >
+            <i class="ri-door-line"></i>
+            <span>Main Entrance</span>
+          </a>
+          <a
+            href="/back"
+            class="js-back flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors !rounded-button whitespace-nowrap"
+          >
+            <i class="ri-door-closed-line"></i>
+            <span>Back Entrance</span>
+          </a>
+        </div>
+        <div class="mt-8 text-sm text-gray-500">
+          <p>© 2025 Access Management System. All rights reserved.</p>
+        </div>
+      </div>
+    </main>
+    <script src="/js/home.js"></script>
+  </body>
+</html>

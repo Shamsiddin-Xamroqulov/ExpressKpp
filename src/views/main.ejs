@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Entrance</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#4f46e5", secondary: "#6366f1" },
+            borderRadius: {
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      input:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+      }
+      video {
+        transform: scaleX(-1);
+      }
+      canvas {
+        transform: scaleX(-1);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 min-h-screen flex justify-center mt-3">
+    <main class="w-full max-w-xl px-6">
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <h2 class="text-2xl font-semibold text-center mb-6">Main Entrance</h2>
+
+        <form class="space-y-6">
+          <div>
+            <label
+              class="block text-sm font-medium text-gray-700 mb-2"
+              for="userId"
+              >User ID</label
+            >
+            <div class="relative">
+              <i
+                class="ri-message-2-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+              ></i>
+              <input
+                type="number"
+                id="userId"
+                name="userId"
+                class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded !rounded-button text-lg"
+                placeholder="Enter the User ID received via SMS"
+              />
+            </div>
+            <div>
+              <div class="flex space-x-6 justify-between mx-5 font-semibold">
+                <div class="flex items-center mt-3">
+                  <input
+                    type="radio"
+                    id="direction-in"
+                    name="direction"
+                    value="In"
+                    class="w-5 h-5 text-blue-600 focus:ring-blue-500"
+                  />
+                  <label for="direction-in" class="ml-2 text-gray-700"
+                    >Kirish</label
+                  >
+                </div>
+                <div class="flex items-center mt-3">
+                  <input
+                    type="radio"
+                    id="direction-out"
+                    name="direction"
+                    value="Out"
+                    class="w-5 h-5 text-blue-600 focus:ring-blue-500"
+                  />
+                  <label for="direction-out" class="ml-2 text-gray-700"
+                    >Chiqish</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="mt-10 space-y-4">
+          <video
+            id="video"
+            autoplay
+            playsinline
+            class="w-full rounded-lg border scale-1"
+          ></video>
+          <canvas
+            id="canvas"
+            width="465"
+            height="350"
+            class="hidden border rounded-lg"
+          ></canvas>
+          <div class="flex gap-4 justify-center mt-4">
+            <button
+              id="snap"
+              class="bg-primary text-white px-4 py-2 rounded-button hover:bg-primary/90"
+              disabled
+            >
+              Take Photo
+            </button>
+            <button
+              id="upload"
+              class="bg-green-600 text-white px-4 py-2 rounded-button hover:bg-green-500 hidden"
+            >
+              Upload
+            </button>
+            <button
+              id="cancel"
+              class="bg-red-600 text-white px-4 py-2 rounded-button hover:bg-red-500 hidden"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>

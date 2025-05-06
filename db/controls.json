@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "firstname": "binalioy",
+        "time": "06.05.2025, 14:51:52",
+        "direction": "In",
+        "empId": 2,
+        "kppId": "Asosiy Eshik",
+        "imagePath": "https://res.cloudinary.com/deavssvrp/image/upload/v1746525113/kppFileUpload/nuvs99qdhycj7lrkjbtp.jpg"
+    },
+    {
+        "id": 2,
+        "firstname": "binalioy",
+        "time": "06.05.2025, 15:01:22",
+        "direction": "Out",
+        "empId": 2,
+        "kppId": "Asosiy Eshik",
+        "imagePath": "https://res.cloudinary.com/deavssvrp/image/upload/v1746525682/kppFileUpload/farxykx1vykxdgwnfd1j.jpg"
+    },
+    {
+        "id": 3,
+        "firstname": "binalioy",
+        "time": "06.05.2025, 15:06:12",
+        "direction": "In",
+        "empId": 2,
+        "kppId": "Asosiy Eshik",
+        "imagePath": "https://res.cloudinary.com/deavssvrp/image/upload/v1746525973/kppFileUpload/wrlgctshk5gsfv78ljh7.jpg"
+    },
+    {
+        "id": 4,
+        "firstname": "binalioy",
+        "time": "06.05.2025, 16:22:33",
+        "direction": "Out",
+        "empId": 2,
+        "kppId": "Orqa Eshik",
+        "imagePath": "https://res.cloudinary.com/deavssvrp/image/upload/v1746530553/kppFileUpload/img-1746530550013.jpg"
+    },
+    {
+        "id": 5,
+        "firstname": "binalioy",
+        "time": "06.05.2025, 18:21:07",
+        "direction": "In",
+        "empId": 2,
+        "kppId": "Asosiy Eshik",
+        "imagePath": "https://res.cloudinary.com/deavssvrp/image/upload/v1746537666/kppFileUpload/img-1746537663639.jpg"
+    },
+    {
+        "id": 6,
+        "firstname": "ogabek",
+        "time": "06.05.2025, 20:36:12",
+        "direction": "In",
+        "empId": 3,
+        "kppId": "Asosiy Eshik",
+        "imagePath": "https://res.cloudinary.com/deavssvrp/image/upload/v1746545771/kppFileUpload/img-1746545769562.jpg"
+    }
+]

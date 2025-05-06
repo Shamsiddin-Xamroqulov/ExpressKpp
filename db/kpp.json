@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "gateNumber": "B2",
+        "gateLocation": "Asosiy Eshik"
+    },
+    {
+        "id": 2,
+        "gateNumber": "A1",
+        "gateLocation": "Orqa Eshik"
+    }
+]
