@@ -82,20 +82,20 @@ background-color: rgba(79, 70, 229, 0.05);
 </header>
 <main class="w-full px-6 py-8">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-<div class="bg-white p-6 rounded-xl shadow-lg">
-<div class="flex items-center justify-between mb-4">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full">
-<i class="ri-team-line text-blue-600 text-2xl"></i>
-</div>
-<div class="flex items-center gap-2 text-blue-600">
-<i class="ri-arrow-up-line"></i>
-<span>12%</span>
-</div>
-</div>
-<h3 class="text-gray-500 text-sm">Total Employees</h3>
-<p class="text-2xl font-semibold mt-2">1,234</p>
-</div>
-<div class="bg-white p-6 rounded-xl shadow-lg">
+    <div class="bg-white p-6 rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-xl duration-200 cursor-pointer">
+      <div class="flex items-center justify-between mb-4">
+        <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full">
+          <i class="ri-team-line text-blue-600 text-2xl"></i>
+        </div>
+        <div class="flex items-center gap-2 text-blue-600">
+          <i class="ri-arrow-up-line"></i>
+          <span>12%</span>
+        </div>
+      </div>
+      <h3 class="text-gray-500 text-sm">Total Employees</h3>
+      <p class="text-2xl font-semibold mt-2">1,234</p>
+    </div>
+<div class="bg-white p-6 rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-xl duration-200 cursor-pointer">
 <div class="flex items-center justify-between mb-4">
 <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full">
 <i class="ri-user-add-line text-green-600 text-2xl"></i>
@@ -108,7 +108,7 @@ background-color: rgba(79, 70, 229, 0.05);
 <h3 class="text-gray-500 text-sm">New Hires</h3>
 <p class="text-2xl font-semibold mt-2">56</p>
 </div>
-<div class="bg-white p-6 rounded-xl shadow-lg">
+<div class="bg-white p-6 rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-xl duration-200 cursor-pointer">
 <div class="flex items-center justify-between mb-4">
 <div class="w-12 h-12 flex items-center justify-center bg-purple-100 rounded-full">
 <i class="ri-building-2-line text-purple-600 text-2xl"></i>
@@ -121,19 +121,21 @@ background-color: rgba(79, 70, 229, 0.05);
 <h3 class="text-gray-500 text-sm">Departments</h3>
 <p class="text-2xl font-semibold mt-2">8</p>
 </div>
-<div class="bg-white p-6 rounded-xl shadow-lg">
-<div class="flex items-center justify-between mb-4">
-<div class="w-12 h-12 flex items-center justify-center bg-red-100 rounded-full">
-<i class="ri-user-unfollow-line text-red-600 text-2xl"></i>
-</div>
-<div class="flex items-center gap-2 text-red-600">
-<i class="ri-arrow-down-line"></i>
-<span>3%</span>
-</div>
-</div>
-<h3 class="text-gray-500 text-sm">Resignations</h3>
-<p class="text-2xl font-semibold mt-2">12</p>
-</div>
+<% -data.forEach((item) => { %>
+  <div class="bg-white p-6 rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-xl duration-200 cursor-pointer">
+    <div class="flex items-center justify-between mb-4">
+      <div class="w-12 h-12 flex items-center justify-center bg-red-100 rounded-full">
+        <i class="ri-user-unfollow-line text-red-600 text-2xl"></i>
+      </div>
+      <div class="flex items-center gap-2 text-red-600">
+        <i class="ri-arrow-down-line"></i>
+        <span>3%</span>
+      </div>
+    </div>
+    <h3 class="text-gray-500 text-sm">Resignations</h3>
+    <p class="text-2xl font-semibold mt-2"><%= item.deleteId %></p>
+  </div>
+  <% }) %>
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 <div class="bg-white shadow-lg rounded-xl overflow-hidden">
@@ -242,7 +244,7 @@ background-color: rgba(79, 70, 229, 0.05);
 </div>
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6 mt-6">
-<div class="bg-white p-6 rounded-xl shadow-lg">
+<div class="bg-white p-6 rounded-xl shadow-lg transition transform hover:scale-105 hover:shadow-xl duration-200 cursor-pointer">
 <h3 class="text-lg font-semibold mb-4">Quick Actions</h3>
 <div class="space-y-4">
 <button class="w-full flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors !rounded-button whitespace-nowrap">

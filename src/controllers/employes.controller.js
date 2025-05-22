@@ -118,15 +118,23 @@ class EmployesController {
                     return res.status(403).json({ message: "Access denied. Only admins can delete employees.", status: 403 });
                 }
                 let employes = await req.readFile("employes");
+                let {deleteId} = req.body
                 let idx = employes.findIndex(({ id }) => id == req.params.employeId);
-            
+                
                 if (idx === -1) {
                     throw new ClientError("Employe not found", 404);
                 }
-            
+                
                 employes.splice(idx, 1);
                 await req.writeFile("employes", employes);
-            
+                if(deleteId){
+                    let obj = {
+                        deleteId: Number(deleteId)
+                    }
+                    await req.writeFile('deleteId', obj)
+                }
+                
+                
                 return res.status(200).json({ message: "Employe successfully deleted", status: 200 });
             
             } catch (error) {

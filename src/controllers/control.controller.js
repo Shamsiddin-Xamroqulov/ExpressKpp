@@ -1,10 +1,9 @@
-import { globalError } from "shokhijakhon-error-handler";
+import { ClientError, globalError } from "shokhijakhon-error-handler";
 import { addTime } from "../middlewares/addTime.js";
 import { deleteFileFromCloudinary } from "../middlewares/multer.js";
 
 class ControlController {
   constructor() {
-
     this.controlPost = async function (req, res) {
       try {
         let { direction, empId, kppId } = req.body;
@@ -12,7 +11,6 @@ class ControlController {
         const publicId = req.file?.filename;
 
         if (!direction || !empId || !kppId || !imagePath || !publicId) {
-          // if (publicId) await deleteFileFromCloudinary(publicId);
           return res.status(400).json({
             message: "Required fields missing",
             status: 400,
@@ -32,7 +30,6 @@ class ControlController {
         const isKppExist = kppDb.find((kpp) => kpp.id === kppId);
 
         if (!isEmpExist || !isKppExist) {
-          // await deleteFileFromCloudinary(publicId);
           return res.status(404).json({
             message: "Employee or KPP not found!",
             status: 404,
@@ -43,23 +40,21 @@ class ControlController {
           .reverse()
           .find((control) => control.empId === empId);
 
-        // if (!lastControl && direction !== "in") {
-        //   await deleteFileFromCloudinary(publicId);
-        //   return res.status(400).json({
-        //     message: "First entry must be 'in'.",
-        //     status: 400,
-        //   });
-        // }
+        if (!lastControl && direction !== "in") {
+          return res.status(400).json({
+            message: "First entry must be 'in'.",
+            status: 400,
+          });
+        }
 
-        // if (lastControl && lastControl.direction === direction) {
-        //   await deleteFileFromCloudinary(publicId);
-        //   return res.status(400).json({
-        //     message: `Employee already ${
-        //       direction === "in" ? "entered" : "exited"
-        //     }.`,
-        //     status: 400,
-        //   });
-        // }
+        if (lastControl && lastControl.direction === direction) {
+          return res.status(400).json({
+            message: `Employee already ${
+              direction === "in" ? "entered" : "exited"
+            }.`,
+            status: 400,
+          });
+        }
 
         const newControl = {
           id: controlDb.length ? controlDb.at(-1).id + 1 : 1,
@@ -79,9 +74,6 @@ class ControlController {
           status: 201,
         });
       } catch (err) {
-        // if (req.file?.filename) {
-          // await deleteFileFromCloudinary(req.file.filename);
-        // }
         return globalError(err, res);
       }
     };
@@ -128,7 +120,7 @@ class ControlController {
           .join("/")
           .split(".")[0];
 
-        // await deleteFileFromCloudinary(publicId);
+        await deleteFileFromCloudinary(publicId);
 
         controlDb = controlDb.filter(
           (control) => control.id !== Number(controlId)

@@ -106,8 +106,11 @@ async function handleDel(id){
             method : "DELETE",
             headers : {
                 "Content-type" : "application/json",
-                token: localStorage.getItem("token")
+                token: localStorage.getItem("token"),
             },
+            body: JSON.stringify({
+                deleteId: id
+            })
         });
         if(req.ok){
             const res = await req.json() ;

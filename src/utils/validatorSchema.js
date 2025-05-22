@@ -92,3 +92,11 @@ export const controlValidator = Joi.object({
         "any.required": "Kpp id is required"
     }),
 });
+
+export const deleteIdValidatorSchema = Joi.object({
+    deleteId: Joi.number().required().messages({
+        "number.base": "Delete id must be a number",
+        "number.empty": "Delete id cannot be empty",
+        "any.required": "Delete id is required"
+    })
+})

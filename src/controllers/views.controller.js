@@ -32,7 +32,9 @@ class ViewsController {
         }
         this.admin = async (req, res) => {
             try {
-                return res.render("admin");
+                let data = await req.readFile("deleteId");
+                let employes = await req.readFile("employes");
+                return res.render("admin", {data: data, emeployes: employes});
             } catch (err) {
                 return globalError(err, res);
             }
